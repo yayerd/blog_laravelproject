@@ -1,5 +1,7 @@
 <?php
 
+// AJOUTER LE CATEGORIE CONTROLLER COMME NAMESPACE
+use App\Http\Controllers\Categorie_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/listecategorie', function () {
-    return view('categories.liste_categorie');
-});
+// VOICI UNE MANIERE D'ECRIRE LES ROUTES 
+// Route::get('/listecategorie', function () {
+//     return view('categories.liste_categorie');
+// });
 
-Route::get('/categories/ajouter', function () {
-    return view('categories.ajouter_categorie');
-});
+// VOICI UNE AUTRE MANIERE D'ECRIRE LES ROUTES 
+Route::get('/listecategorie', [Categorie_controller::class, 'index']);
+
+Route::get('/ajoutercategorie', [Categorie_controller::class, 'create']);
+
+Route::post('/categorie/putcategorie', [Categorie_controller::class, 'store']);
+
+
+// Nommer une route : Route::get('/listecategorie', [Categorie_controller::class, 'index'])->name('nomdelaroute')
+// utilisation de la route nommée: {{'nomdelaroute'}}
