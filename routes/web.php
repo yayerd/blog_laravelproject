@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/listecategorie', function () {
+    return view('categories.liste_categorie');
+});
+
+Route::get('/categories/ajouter', function () {
+    return view('categories.ajouter_categorie');
+});
