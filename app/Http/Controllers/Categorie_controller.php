@@ -36,7 +36,7 @@ class Categorie_controller extends Controller
         ]);
         
         $categorie = new Categorie();
-        $categorie->nomCategorie = $request->get(htmlspecialchars('nomCategorie')); 
+        $categorie->nomCategorie = $request->get('nomCategorie'); 
         $categorie->save();
         return back();
         // autre methode

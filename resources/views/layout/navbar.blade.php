@@ -31,7 +31,10 @@
                 <a class="nav-link" href="/ajoutercategorie">New Catégorie</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Articles</a>
+                <a class="nav-link" href="/listearticle">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ajouterarticle">New Article</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Commentaires</a>
@@ -60,7 +63,7 @@
     
     {{-- footer --}}
 
-    <footer class="bg-dark text-center bg-body-tertiary text-white fixed-bottom">
+    <footer class="bg-dark text-center bg-body-tertiary text-white ">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
         <!-- Section: Form -->

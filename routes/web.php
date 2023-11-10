@@ -1,6 +1,8 @@
 <?php
 
 // AJOUTER LE CATEGORIE CONTROLLER COMME NAMESPACE
+
+use App\Http\Controllers\Article_controller;
 use App\Http\Controllers\Categorie_controller;
 use Illuminate\Support\Facades\Route;
 
@@ -24,13 +26,19 @@ use Illuminate\Support\Facades\Route;
 //     return view('categories.liste_categorie');
 // });
 
-// VOICI UNE AUTRE MANIERE D'ECRIRE LES ROUTES 
+// VOICI UNE AUTRE MANIERE D'ECRIRE LES ROUTES  
+// Les routes de Categorie
 Route::get('/listecategorie', [Categorie_controller::class, 'index']);
-
 Route::get('/ajoutercategorie', [Categorie_controller::class, 'create']);
-
 Route::post('/categorie/putcategorie', [Categorie_controller::class, 'store']);
 
 
 // Nommer une route : Route::get('/listecategorie', [Categorie_controller::class, 'index'])->name('nomdelaroute')
 // utilisation de la route nommée: {{'nomdelaroute'}}
+
+// Les routes de Article
+Route::get('/listearticle', [Article_controller::class, 'index']);
+Route::get('/ajouterarticle', [Article_controller::class, 'create']);
+Route::post('/categorie/putarticle', [Article_controller::class, 'store']);
+
+
