@@ -74,7 +74,7 @@
               <!--Grid column-->
               <div class="col-auto ">
                 <p class="pt-2">
-                  <strong>Souscrire à la newsletter</strong>
+                  <strong>Souscription à la newsletter</strong>
                 </p>
               </div>
               <!--Grid column-->
@@ -84,7 +84,7 @@
                 <!-- Email input -->
                 <div class="form-outline form-white mb-4">
                   <input type="email" id="form5Example29" class="form-control" />
-                  <label class="form-label" for="form5Example29">Adresse Mail</label>
+                  <label class="form-label" for="form5Example29">Adresse Email</label>
                 </div>
               </div>
               <!--Grid column-->

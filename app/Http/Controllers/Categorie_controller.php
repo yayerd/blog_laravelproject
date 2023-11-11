@@ -13,7 +13,7 @@ class Categorie_controller extends Controller
     public function index()
     {
         $categories = Categorie::all();
-        return view('categories.liste_categorie', [ "categories"=>$categories ]);
+        return view('categories.liste_categorie', ["categories"=>$categories]);
     }
 
     /**

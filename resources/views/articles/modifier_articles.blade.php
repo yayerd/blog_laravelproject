@@ -3,7 +3,7 @@
 @section('contenue')
 
 <div class="d-flex justify-content-center align-items-center my-4">
-@if (count($errors) >0 )
+@if (count($errors) > 0 )
 <div class="alert alert-dismissible alert-danger">
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     @foreach ($errors->all() as $error)
@@ -14,22 +14,34 @@
 @endif
 </div>
 
-<div class="container my-4">
+<div class="container my-4 mx-6">
     <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-md-4">
-            <form action="/categorie/putcategorie" method="POST">
+        <div class=" p-4 border mt-2 col-sm-8">
+            <form action="{{'/article/modifierarticle/'.$article->id}}" method="POST">
+                @method('PATCH')
                 @csrf 
                 <div class="form-group">
-                    <label for="categorie" class="form-label mt-4">Nom de la catégorie</label>
-                    <input name="nomCategorie" type="text" class="form-control" id="categorie" aria-describedby="categorie" placeholder="Ajouter Nouvelle Catégorie">
-                    <small id="categorieHelp" class="form-text text-muted">Une catégorie pour vos articles.</small>
+                    <label for="categorie" class="form-label mt-4">Ajouter un nouvel article</label>
+                    <input name="titreArticle" value="{{$article->titreArticle}}" type="text" class="form-control" id="categorie" aria-describedby="categorie" placeholder="Titre de l'article">
+                    <small id="categorieHelp" class="form-text text-muted">Le titre de l'article.</small>
                   </div>
-                  <br>
-                  <button name="enregister" type="submit" class="btn btn-primary">Enregistrer</button>
-            </form>
+                  <div class="form-group">
+                    <label for="contenuTextarea" class="form-label mt-4">Contenu de l'article </label>
+                    <textarea name="contenuArticle" class="form-control" id="contenuTextarea" rows="3">{{$article->contenuArticle}}</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleSelect1" class="form-label mt-4">Catégorie de l'article</label>
+                    <select name="categorie_id" class="form-select" id="exampleSelect1">
+                      @foreach ($categories as $categorie)
+                          <option value="{{$categorie->id}}" {{$categorie->id == $article->categorie_id ? 'selected' : ''}}>{{$categorie->nomCategorie}}</option>
+                      @endforeach
+                    </select>
+                  </div> <br>
+                  <button type="submit" class="btn btn-light">Modifier</button>
+                  <br><br>
+                </form>
         </div>
-       
-        </div>
+    </div>
 </div>
 
 
