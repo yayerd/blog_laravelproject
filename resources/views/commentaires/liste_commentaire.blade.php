@@ -22,18 +22,23 @@
               <div class="card-body">
                 <p class="card-text">{{$article->contenuArticle}}</p>
               </div>
-              {{-- <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul> --}}
+              @foreach ($articles as $article)
+              <div>
+                <label for="commentaire">Commentaire</label>
+                <textarea name="commentaire" id="commentaire" cols="35" rows="5" placeholder="Ajouter commentaire"></textarea>
+                  <a href="{{'/commentaires/voir/'.$article->id}}" class="card-link btn btn-light">Envoyer</a>
+                </div>
+              <ul class="list-group list-group-flush">
+                {{-- <li class="list-group-item">{{$commentaire->commentaire}}</li> --}}
+              </ul> 
+              @endforeach
               <div class="card-body">
                 <a href="{{'/articles/'.$article->id}}" class="card-link btn btn-light">Voir plus</a>
                 {{-- <button type="submit" class="btn btn-danger">Supprimer</button> --}}
               </div>
               <form action="{{'/article/supprimerarticle/'.$article->id}}" method="post">
                 @method('delete')
-                @csrf 
+                @csrf
                 {{-- <a href="{{'/articles/'.$article->id}}" class="card-link btn btn-light">Voir plus</a> --}}
                 <button class="card-link btn btn-light" type="submit">Supprimer</button>
               </form>

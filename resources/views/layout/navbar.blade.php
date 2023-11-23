@@ -37,7 +37,10 @@
                 <a class="nav-link" href="/ajouterarticle">New Article</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Commentaires</a>
+                <a class="nav-link" href="/listecommentaire">Commentaires</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ajoutercommentaire">Ajouter Commentaire</a>
               </li>
               {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>

@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\Article_controller;
 use App\Http\Controllers\Categorie_controller;
+use App\Http\Controllers\CommentaireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +47,11 @@ Route::get('/modifierarticle/{id}', [Article_controller::class, 'edit']);
 Route::patch('/article/modifierarticle/{id}', [Article_controller::class, 'update']);
 Route::delete('/article/supprimerarticle/{id}', [Article_controller::class, 'destroy']);
 
+// Les routes de Commentaire
+Route::get('/listecommentaire', [CommentaireController::class, 'index']);
+Route::get('/ajoutercommentaire', [CommentaireController::class, 'create']);
+Route::post('/categorie/putcommentaire', [Article_controller::class, 'store']);
+Route::get('/commentaires/voir/{id}', [CommentaireController::class, 'voir']);
 
 
 // Route::post('/categorie/modifierarticle', [Article_controller::class, 'update'])
